@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Oyunu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css"> </head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-start pt-8">
+    <h1 class="game-title text-gray-800 mb-4">Sudoku</h1>
+    <div class="top-section">
+        <div class="timer-display" id="timer-display">Süre: 00:00</div>
+        <div id="message-box"></div>
+    </div>
+    <div id="sudoku-board"></div>
+    <div class="difficulty-buttons">
+        <button class="difficulty-button" data-difficulty="easy">Kolay</button>
+        <button class="difficulty-button" data-difficulty="medium">Orta</button>
+        <button class="difficulty-button" data-difficulty="hard">Zor</button>
+    </div>
+    <div class="button-container flex flex-wrap justify-center gap-2 mb-4">
+        <button id="start-game" class="game-button">Oyunu Başlat</button>
+        <button id="refresh-board" class="game-button">Tahtayı Yenile</button>
+        <button id="timed-mode" class="game-button">Süreli Mod</button>
+        <button id="view-rankings" class="game-button">Sıralama</button>
+        <button id="open-settings" class="game-button">Ayarlar</button>
+    </div>
+    <div id="rankings-modal" class="settings-modal">
+        <div class="settings-content">
+            <span class="close-button" id="close-rankings-modal">&times;</span>
+            <h2>Sıralama</h2>
+            <ol id="ranking-list"></ol>
+        </div>
+    </div>
+    <div id="settings-modal" class="settings-modal">
+        <div class="settings-content">
+            <span class="close-button" id="close-settings-modal">&times;</span>
+            <h2>Oyun Ayarları</h2>
+            <label for="player-name">Oyuncu Adı:</label>
+            <input type="text" id="player-name" value="Oyuncu">
+            <label for="music-volume">Müzik Sesi:</label>
+            <input type="range" id="music-volume" min="0" max="100" value="50">
+            <label for="sound-volume">Hamle Sesi:</label>
+            <input type="range" id="sound-volume" min="0" max="100" value="50">
+            <div class="settings-buttons">
+                <button id="save-settings" class="game-button">Kaydet</button>
+                <button id="cancel-settings" class="game-button">İptal</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script> </body>
+</html>
